@@ -14,7 +14,7 @@ export function renderPaymentSummary(){
 
       const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
 
-      console.log(cartItem.deliveryOptionId)
+      
 
       shippingPriceCents += deliveryOption.priceCents;
       
