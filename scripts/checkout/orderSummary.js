@@ -47,7 +47,7 @@ export function renderOrderSummary(){
               ${machtchingProduct.name}
             </div>
             <div class="product-price">
-              $${(formatCurrency(machtchingProduct.priceCents))}
+              ${machtchingProduct.getPrice()}
             </div>
             <div class="product-quantity">
               <span>
