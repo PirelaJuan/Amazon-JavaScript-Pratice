@@ -12,16 +12,24 @@ import { loadCart } from "../data/cart.js";
 
 
 async function loadPage() {
-  
-  await Promise.all([
+  try{
+    
+    //throw 'error 1';
 
-    loadProductsFetch(),
-    new Promise((resolve) => {
-      loadCart(() => {
-        resolve();
-      });
-    })
-  ]);
+    await Promise.all([
+
+      loadProductsFetch(),
+      new Promise((resolve) => {
+        loadCart(() => {
+          resolve();
+        });
+      })
+    ]);
+
+  } catch (error) {
+       console.log('Unexpected error. Please try again later.');
+  }
+  
 
   renderOrderSummary();
   renderPaymentSummary();
